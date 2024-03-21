@@ -1,7 +1,9 @@
 {
   "name": "vocal-teacher",
+  "repo": "https://github.com/NatalaBoiko/vocal-teacher",
+  "site": "https://vocal-teacher-teal.vercel.app/",
+  "figma": "https://www.figma.com/file/R3JIKCWYGp8JCNyknujGvk/Vocal-Teacher-(Copy)?type=design&node-id=23-12&mode=design&t=jrHF3OP9Ek2fv20W-0",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

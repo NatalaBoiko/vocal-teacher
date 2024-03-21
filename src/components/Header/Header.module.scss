@@ -42,9 +42,6 @@
     display: flex;
     font-size: 20px;
   }
-  @media screen and ($desktop) {
-    font-size: 24px;
-  }
 }
 
 .contactLinks {
@@ -56,4 +53,52 @@
 
 .btn {
   margin-right: 0;
+
+  background-size: 200%;
+  background-position: right;
+  &:hover,
+  &:focus {
+    animation: btnBg 0.3s linear forwards;
+    scale: 0.98;
+  }
+}
+@keyframes btnBg {
+  from {
+    background-image: linear-gradient(
+      45deg,
+      #7a002f,
+      #7a002f,
+      #7a002f,
+      #7a002f,
+      #af1d44,
+      #e04d5e,
+      #f28269,
+      #ffbb80,
+      #f28269,
+      #e04d5e,
+      #e04d5e,
+      #af1d44,
+      #7a002f,
+      #7a002f,
+      #7a002f
+    );
+  }
+  to {
+    background-image: linear-gradient(
+      45deg,
+      #7a002f,
+      #7a002f,
+      #7a002f,
+      #7a002f,
+      #af1d44,
+      #e04d5e,
+      #f28269,
+      #ffbb80,
+      #f28269,
+      #e04d5e,
+      #e04d5e,
+      #af1d44
+    );
+    background-position: left;
+  }
 }

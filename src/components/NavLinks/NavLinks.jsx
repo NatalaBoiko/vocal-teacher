@@ -4,8 +4,6 @@ import React from "react";
 import styles from "./NavLinks.module.scss";
 
 const NavLinks = ({ className }) => {
-  console.log("navLinks", navLinks);
-
   return (
     <nav className={`${styles.navLinks} ${className}`}>
       {navLinks.map((item) => {
