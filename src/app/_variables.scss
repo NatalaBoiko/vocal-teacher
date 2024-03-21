@@ -1,6 +1,16 @@
 $tablet: "min-width: 768px";
 $laptop: "min-width: 1024px";
 $desktop: "min-width: 1440px";
+$maxWidth: 1440px;
+
+$mobileSidePadding: 24px;
+$tabletSidePadding: 48px;
+$laptopSidePadding: 96px;
+$desktopSidePadding: 120px;
 
 $lightFontColor: rgb(255, 255, 255);
-$darkFontColor: rgb(0, 0, 0);
+$darkFontColor: rgb(31, 31, 31);
+
+$lightBg: rgb(255, 255, 255);
+$darkBg: rgb(31, 31, 31);
+$btnBg: rgb(122, 0, 47);

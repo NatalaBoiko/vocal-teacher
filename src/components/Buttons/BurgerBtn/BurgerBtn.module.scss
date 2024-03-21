@@ -1,0 +1,32 @@
+@import "../../../app/variables";
+
+.btn {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    transform: rotate(180deg);
+  }
+
+  &:active {
+    scale: 0.9;
+    transform: rotate(360deg);
+  }
+}
+
+.burger,
+.close {
+  stroke: $darkFontColor;
+  fill: $darkFontColor;
+
+  width: 100%;
+  height: 100%;
+}
+.close {
+  stroke-width: 16px;
+}

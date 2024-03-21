@@ -12,6 +12,7 @@
   -webkit-transition-duration: 250ms;
   -o-transition-duration: 250ms;
   transition-duration: 250ms;
+  // outline: 1px solid red;
 }
 
 html {
@@ -27,19 +28,62 @@ body {
   align-items: center;
 
   font-family: "Montserrat";
-  color: $lightFontColor;
-  color: $darkFontColor;
 }
 
 header,
 footer {
   width: 100%;
   max-width: inherit;
-  background-color: aquamarine;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // padding-left: $mobileSidePadding;
+  // padding-right: $mobileSidePadding;
+
+  // @media screen and ($tablet) {
+  //   padding-left: $tabletSidePadding;
+  //   padding-right: $tabletSidePadding;
+  // }
 }
 main {
   width: 100%;
 }
+
 section {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $darkFontColor;
+  height: 50vh;
+  padding-left: $mobileSidePadding;
+  padding-right: $mobileSidePadding;
+
+  @media screen and ($tablet) {
+    padding-left: $tabletSidePadding;
+    padding-right: $tabletSidePadding;
+  }
+}
+
+section:nth-child(2n + 1) {
+  background-color: $darkBg;
+  color: $lightFontColor;
+}
+
+.container {
+  width: 100%;
+  max-width: $maxWidth;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
 }

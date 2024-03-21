@@ -1,1 +1,39 @@
 @import "../../app/variables";
+
+.header {
+  background-color: transparent;
+  position: fixed;
+  justify-content: space-between;
+  max-width: $maxWidth;
+}
+
+.container {
+  background-color: $lightBg;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+
+  padding-left: $mobileSidePadding;
+  padding-right: $mobileSidePadding;
+
+  @media screen and ($tablet) {
+    height: 60px;
+    margin-left: $tabletSidePadding;
+    margin-right: $tabletSidePadding;
+    margin-top: 32px;
+    border-radius: 60px;
+  }
+}
+
+.burgerBtn,
+.burgerBtnClose {
+  stroke: $darkFontColor;
+  fill: $darkFontColor;
+  width: auto;
+  height: 24px;
+}
+.burgerBtnClose {
+  stroke-width: 16px;
+}
