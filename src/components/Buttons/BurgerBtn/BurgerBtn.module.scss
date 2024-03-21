@@ -17,6 +17,9 @@
     scale: 0.9;
     transform: rotate(360deg);
   }
+  @media screen and ($desktop) {
+    display: none;
+  }
 }
 
 .burger,

@@ -7,30 +7,28 @@ import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 // import { GiHamburgerMenu } from "react-icons/gi";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
 import ContactLinks from "../ContactLinks/ContactLinks";
+import NavLinks from "../NavLinks/NavLinks";
 import styles from "./Header.module.scss";
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
   const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
-  // console.log("isClicked", isClicked);
-  // console.log("isMobile", isMobile);
 
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        {(isMobile || isTablet) && (
-          <BurgerBtn
-            isClicked={isClicked}
-            setIsClicked={setIsClicked}
-            onClick={() => {
-              setIsClicked(!isClicked);
-            }}
-          />
-        )}
+        <BurgerBtn
+          isClicked={isClicked}
+          setIsClicked={setIsClicked}
+          onClick={() => {
+            setIsClicked(!isClicked);
+          }}
+          className={styles.burgerBtn}
+        />
+        <NavLinks className={styles.navLinks} />
+        <ContactLinks className={styles.contactLinks} />
 
-        <ContactLinks />
-
-        <ButtonLink href="/" title="Безкоштовний урок" />
+        <ButtonLink href="/" title="Безкоштовний урок" className={styles.btn} />
       </div>
     </header>
   );

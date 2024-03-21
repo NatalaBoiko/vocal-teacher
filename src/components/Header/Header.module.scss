@@ -19,21 +19,41 @@
   padding-right: $mobileSidePadding;
 
   @media screen and ($tablet) {
-    height: 60px;
+    height: 56px;
     margin-left: $tabletSidePadding;
     margin-right: $tabletSidePadding;
     margin-top: 32px;
     border-radius: 60px;
   }
+  @media screen and ($desktop) {
+    height: 60px;
+  }
 }
 
-.burgerBtn,
-.burgerBtnClose {
-  stroke: $darkFontColor;
-  fill: $darkFontColor;
-  width: auto;
-  height: 24px;
+.burgerBtn {
+  @media screen and ($laptop) {
+    display: none;
+  }
 }
-.burgerBtnClose {
-  stroke-width: 16px;
+
+.navLinks {
+  display: none;
+  @media screen and ($laptop) {
+    display: flex;
+    font-size: 20px;
+  }
+  @media screen and ($desktop) {
+    font-size: 24px;
+  }
+}
+
+.contactLinks {
+  display: none;
+  @media screen and ($tablet) {
+    display: flex;
+  }
+}
+
+.btn {
+  margin-right: 0;
 }

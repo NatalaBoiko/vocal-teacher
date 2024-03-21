@@ -2,7 +2,7 @@ export const contactLinks = [
   {
     name: "telegram",
     href: "tel:+380966058605",
-    img: "./sprite.svg#icon-phone",
+    img: "./sprite.svg#icon-telegram",
   },
 
   {
@@ -13,13 +13,11 @@ export const contactLinks = [
   {
     name: "email",
     href: "tel:+380966058605",
-    img: "./sprite.svg#icon-phone",
+    img: "./sprite.svg#icon-email",
   },
   {
     name: "viber",
     href: "tel:+380966058605",
-    img: "./sprite.svg#icon-phone",
+    img: "./sprite.svg#icon-viber",
   },
 ];
-
-console.log("contactLinks", contactLinks);

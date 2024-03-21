@@ -1,9 +1,48 @@
 @import "../../app/variables";
 
 .contactLinks {
+  display: flex;
+  gap: 20px;
   & svg {
     width: 20px;
     height: 20px;
-    fill: $darkFontColor;
+    stroke: $darkFontColor;
+    stroke-width: 2px;
+
+    &:hover,
+    &:focus {
+      scale: 0.9;
+    }
+  }
+  & .viber {
+    stroke-width: 0px;
+  }
+}
+
+.telegram {
+  fill: transparent;
+  &:hover,
+  &:focus {
+    stroke: #229ed9;
+  }
+}
+.phone {
+  fill: transparent;
+  &:hover,
+  &:focus {
+    stroke: #ae9ef4;
+  }
+}
+.email {
+  &:hover,
+  &:focus {
+    stroke: #3e65cf;
+    fill: #3e65cf;
+  }
+}
+.viber {
+  &:hover,
+  &:focus {
+    fill: #7360f2;
   }
 }
