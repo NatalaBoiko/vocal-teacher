@@ -1,7 +1,7 @@
 "use client";
 
 // import { useWindowResize } from "@/hooks/useWindowResize";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
 import ContactLinks from "../ContactLinks/ContactLinks";
@@ -10,6 +10,7 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
+  console.log("isClicked", isClicked);
   // const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
   const burgerBtn = useRef(null);
   const closeBtn = useRef(null);
@@ -30,15 +31,27 @@ const Header = () => {
     }
   };
 
+  // const setLaptopHeader = () => {
+  //   if (isBrowser && window.innerWidth >= 1024) {
+  //     setIsClicked(false);
+  //   } else {
+  //     return;
+  //   }
+  // }
+
+  const setLaptopHeader = useCallback(() => {
+    if (window.innerWidth >= 1024) {
+      setIsClicked(false);
+    } else {
+      return;
+    }
+  }, []);
+
   useEffect(() => {
     window.addEventListener("click", closeBurgerOnLinkClick);
-
-    window.innerWidth >= 1024
-      ? setIsClicked(false)
-      : () => {
-          return;
-        };
-  }, [window.innerWidth]);
+    window.addEventListener("resize", setLaptopHeader);
+    // setLaptopHeader();
+  }, [setLaptopHeader]);
 
   return (
     <header className={styles.header}>
