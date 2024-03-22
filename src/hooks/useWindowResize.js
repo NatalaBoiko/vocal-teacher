@@ -74,3 +74,6 @@ export const useWindowResize = () => {
 
   return { isMobile, isTablet, isLaptop, isDesktop };
 };
+
+// import { useWindowResize } from "@/hooks/useWindowResize";
+// const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
