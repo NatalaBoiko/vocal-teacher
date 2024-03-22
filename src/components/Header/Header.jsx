@@ -1,10 +1,8 @@
 "use client";
 
-import { useWindowResize } from "@/hooks/useWindowResize";
-import React, { useState } from "react";
+// import { useWindowResize } from "@/hooks/useWindowResize";
+import React, { useEffect, useRef, useState } from "react";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
-
-// import { GiHamburgerMenu } from "react-icons/gi";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
 import ContactLinks from "../ContactLinks/ContactLinks";
 import NavLinks from "../NavLinks/NavLinks";
@@ -12,7 +10,35 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
+  // const { isMobile, isTablet, isLaptop, isDesktop } = useWindowResize();
+  const burgerBtn = useRef(null);
+  const closeBtn = useRef(null);
+  const mobileMebuContainer = useRef(null);
+
+  const isBrowser = typeof window !== "undefined";
+
+  const closeBurgerOnLinkClick = (e) => {
+    console.log(e.target);
+    if (
+      e.target === burgerBtn.current ||
+      e.target === closeBtn.current ||
+      e.target === mobileMebuContainer.current
+    ) {
+      return;
+    } else {
+      setIsClicked(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", closeBurgerOnLinkClick);
+
+    window.innerWidth >= 1024
+      ? setIsClicked(false)
+      : () => {
+          return;
+        };
+  }, [window.innerWidth]);
 
   return (
     <header className={styles.header}>
@@ -22,14 +48,18 @@ const Header = () => {
             ? `container ${styles.container} ${styles.mobileMebuContainer}`
             : `container ${styles.container}`
         }
+        ref={mobileMebuContainer}
       >
         <BurgerBtn
           isClicked={isClicked}
           setIsClicked={setIsClicked}
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             setIsClicked(!isClicked);
           }}
           className={styles.burgerBtn}
+          burgerBtn={burgerBtn}
+          closeBtn={closeBtn}
         />
 
         <NavLinks
@@ -38,6 +68,8 @@ const Header = () => {
               ? `${styles.navLinks} ${styles.navLinksMobilevisible}`
               : `${styles.navLinks}`
           }
+          isClicked={isClicked}
+          setIsClicked={setIsClicked}
         />
         <ContactLinks className={styles.contactLinks} />
 
