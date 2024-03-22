@@ -16,7 +16,13 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={`container ${styles.container}`}>
+      <div
+        className={
+          isClicked
+            ? `container ${styles.container} ${styles.mobileMebuContainer}`
+            : `container ${styles.container}`
+        }
+      >
         <BurgerBtn
           isClicked={isClicked}
           setIsClicked={setIsClicked}
@@ -25,10 +31,21 @@ const Header = () => {
           }}
           className={styles.burgerBtn}
         />
-        <NavLinks className={styles.navLinks} />
+
+        <NavLinks
+          className={
+            isClicked
+              ? `${styles.navLinks} ${styles.navLinksMobilevisible}`
+              : `${styles.navLinks}`
+          }
+        />
         <ContactLinks className={styles.contactLinks} />
 
-        <ButtonLink href="/" title="Безкоштовний урок" className={styles.btn} />
+        <ButtonLink
+          href="tel:+380505361693"
+          title="Безкоштовний урок"
+          className={styles.btn}
+        />
       </div>
     </header>
   );

@@ -56,13 +56,19 @@ section {
   align-items: center;
   justify-content: center;
   color: $darkFontColor;
-  height: 50vh;
+
   padding-left: $mobileSidePadding;
   padding-right: $mobileSidePadding;
 
   @media screen and ($tablet) {
     padding-left: $tabletSidePadding;
     padding-right: $tabletSidePadding;
+  }
+  @media screen and (orientation: portrait) {
+    height: 50vh;
+  }
+  @media screen and (orientation: landscape) {
+    height: 100vh;
   }
 }
 
