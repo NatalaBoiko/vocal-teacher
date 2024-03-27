@@ -5,13 +5,13 @@
   position: fixed;
   justify-content: space-between;
   max-width: $maxWidth;
+  z-index: 100;
 }
 
 .container {
   background-color: $lightBg;
   height: 84px;
   display: flex;
-  // align-items: center;
   justify-content: center;
   justify-content: space-between;
   align-items: flex-start;
