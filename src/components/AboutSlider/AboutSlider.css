@@ -1,0 +1,24 @@
+.aboutSlider {
+  width: 50%;
+  height: 200px;
+  padding-bottom: 20px !important;
+}
+/* .aboutSlider .swiper-wrapper { */
+/* transform: translateX(-100px) !important; */
+/* } */
+
+.aboutSlider .swiper-slide {
+  /* width: 132px;
+  height: 120px; */
+  /* height: 80%; */
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.aboutSlider .swiper-pagination {
+  bottom: 0 !important;
+  top: auto !important;
+}

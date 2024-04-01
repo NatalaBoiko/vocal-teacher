@@ -8,11 +8,11 @@ const Hero = () => {
     <section id={styles["hero"]}>
       <div className={`container ${styles.container}`}>
         <div className={styles.nameWrapper}>
-          <h1>
+          <h2>
             Яна <br />
             Полонська
-          </h1>
-          <p>Викладач вокалу</p>
+          </h2>
+          <h1>Викладач вокалу</h1>
         </div>
         <div className={styles.imgWrapper}>
           <Image src={microphone} alt="Picture of the author" fill />

@@ -1,11 +1,10 @@
 @import "../../../app/variables";
 
 .btn {
-  // width: 140px;
-  height: 24px;
+  width: 140px;
+  height: 32px;
   font-size: 12px;
   font-weight: 300;
-  padding: 4px 12px;
   background-color: $btnBg;
   color: $lightFontColor;
   display: flex;
@@ -22,9 +21,9 @@
   }
 
   @media screen and ($tablet) {
+    width: 290px;
     height: 44px;
     font-size: 20px;
-    padding: 4px 40px;
   }
 }
 
