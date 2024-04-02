@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { aboutImages } from "@/data/aboutImages";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import "./AboutSlider.css";
-
-import "swiper/css";
-import "swiper/css/pagination";
-
 import {
   Navigation,
   Pagination,
@@ -15,17 +13,33 @@ import {
   EffectCoverflow,
   Autoplay,
 } from "swiper/modules";
-import Image from "next/image";
+import "./AboutSlider.css";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const AboutSlider = () => {
+  const slide = aboutImages.map((el, i) => {
+    return (
+      <SwiperSlide key={i}>
+        <Image
+          src={el.src}
+          fill
+          alt={el.title}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          title={el.title}
+        />
+      </SwiperSlide>
+    );
+  });
+
   return (
     <Swiper
-      // cssMode={true}
+      //   cssMode={true}
       loop={true}
       pagination={{
         clickable: true,
       }}
-      // mousewheel={true}
+      mousewheel={true}
       keyboard={true}
       effect={"coverflow"}
       grabCursor={true}
@@ -40,11 +54,12 @@ const AboutSlider = () => {
       }}
       spaceBetween={30}
       speed={2000}
-      //   autoplay={{
-      //     delay: 2000,
-      //     disableOnInteraction: false,
-      //     pauseOnMouseEnter: true,
-      //   }}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      pauseOnMouseEnter={true}
       modules={[
         Navigation,
         Pagination,
@@ -55,12 +70,7 @@ const AboutSlider = () => {
       ]}
       className="aboutSlider"
     >
-      <SwiperSlide>
-        <Image src="/images/Yana_1.jpeg" fill />
-      </SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      {slide}
     </Swiper>
   );
 };

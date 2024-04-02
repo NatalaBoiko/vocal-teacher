@@ -1,11 +1,19 @@
 @import "../../app/variables";
 
 .container {
-  justify-content: space-between;
+  flex-direction: column;
   gap: 40px;
 
   & p {
     flex: 1;
     font-size: clamp(12px, 3vw, 24px);
+    text-align: center;
+  }
+  @media screen and (min-width: 425px) {
+    flex-direction: row;
+    justify-content: space-between;
+    & p {
+      text-align: start;
+    }
   }
 }
