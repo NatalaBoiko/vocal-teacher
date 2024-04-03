@@ -1,1 +1,36 @@
 @import "../../app/variables";
+
+.container {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  & h2 {
+    color: $lightFontColor;
+  }
+}
+
+.locationIcon {
+  width: 16px;
+  height: 20px;
+}
+
+.contactLinks {
+  & svg {
+    stroke: $lightFontColor;
+  }
+  &:last-child {
+    fill: $lightFontColor;
+    // & svg {
+    //   fill: $lightFontColor;
+    // }
+  }
+}
+
+// & .telegram {
+//   fill: transparent;
+//   &:hover,
+//   &:focus {
+//     stroke: #229ed9;
+//   }
+// }

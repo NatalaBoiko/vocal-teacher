@@ -3,9 +3,9 @@ import React from "react";
 import { contactLinks } from "../../data/contactLinks";
 import styles from "./ContactLinks.module.scss";
 
-const ContactLinks = ({ className }) => {
+const ContactLinks = ({ className, id }) => {
   return (
-    <ul className={`${styles.contactLinks} ${className}`}>
+    <ul className={`${styles.contactLinks} ${className}`} id={id}>
       {contactLinks.map((item) => {
         return (
           <li key={item.name}>

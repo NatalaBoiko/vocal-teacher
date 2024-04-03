@@ -72,12 +72,14 @@ const Header = () => {
           isClicked={isClicked}
           setIsClicked={setIsClicked}
         />
-        <ContactLinks className={styles.contactLinks} />
+        <ContactLinks id={styles.contactLinks} />
 
         <ButtonLink
           href="tel:+380505361693"
           title="Безкоштовний урок"
           className={styles.btn}
+
+          // }
         />
       </div>
     </header>

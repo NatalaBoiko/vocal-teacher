@@ -59,7 +59,6 @@ const AboutSlider = () => {
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       }}
-      pauseOnMouseEnter={true}
       modules={[
         Navigation,
         Pagination,
@@ -70,7 +69,17 @@ const AboutSlider = () => {
       ]}
       className="aboutSlider"
     >
-      {slide}
+      {aboutImages.map((el, i) => (
+        <SwiperSlide key={i}>
+          <Image
+            src={el.src}
+            fill
+            alt={el.title}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            title={el.title}
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };
