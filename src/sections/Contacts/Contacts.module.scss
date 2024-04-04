@@ -3,34 +3,41 @@
 .container {
   flex-direction: column;
   align-items: flex-start;
+  gap: 40px;
+
+  @media screen and ($tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+  }
+}
+
+.contactsWrapper {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 
   & h2 {
+    font-size: 16px;
+    font-weight: 300;
     color: $lightFontColor;
+    margin-bottom: 20px;
   }
 }
 
-.locationIcon {
-  width: 16px;
-  height: 20px;
-}
+.locationWrapper {
+  display: flex;
+  gap: 8px;
 
-.contactLinks {
   & svg {
-    stroke: $lightFontColor;
+    width: 16px;
+    height: 20px;
   }
-  &:last-child {
-    fill: $lightFontColor;
-    // & svg {
-    //   fill: $lightFontColor;
-    // }
+  & p {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  @media screen and ($tablet) {
+    flex: 1;
   }
 }
-
-// & .telegram {
-//   fill: transparent;
-//   &:hover,
-//   &:focus {
-//     stroke: #229ed9;
-//   }
-// }

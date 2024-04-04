@@ -65,10 +65,10 @@ section {
     padding-right: $tabletSidePadding;
   }
   @media screen and (orientation: portrait) {
-    height: 50vh;
+    min-height: 50vh;
   }
   @media screen and (orientation: landscape) {
-    height: 100vh;
+    min-height: 100vh;
   }
 }
 

@@ -1,0 +1,50 @@
+@import "../../app/variables";
+
+.contactLinks {
+  display: flex;
+  gap: 20px;
+  & svg {
+    width: 20px;
+    height: 20px;
+    stroke: $lightFontColor;
+    stroke-width: 3px;
+
+    &:hover,
+    &:focus {
+      scale: 0.9;
+    }
+  }
+
+  & .viber {
+    fill: $lightFontColor;
+    stroke-width: 0px;
+  }
+}
+
+.telegram {
+  fill: transparent;
+  &:hover,
+  &:focus {
+    stroke: #229ed9;
+  }
+}
+.phone {
+  fill: transparent;
+  &:hover,
+  &:focus {
+    stroke: #ae9ef4;
+  }
+}
+.email {
+  &:hover,
+  &:focus {
+    stroke: #3e65cf;
+    fill: #3e65cf;
+  }
+}
+.viber {
+  &:hover,
+  &:focus {
+    fill: #7360f2;
+  }
+}

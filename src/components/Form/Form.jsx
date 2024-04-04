@@ -1,11 +1,11 @@
 import React from "react";
+import styles from "./Form.module.scss";
 
 const Form = () => {
   return (
-    <>
-      <h3>Хочу співати!</h3>
-      <form></form>
-    </>
+    <form className={styles.form}>
+      <h3 c>Хочу співати!</h3>
+    </form>
   );
 };
 
