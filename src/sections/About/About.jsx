@@ -4,7 +4,7 @@ import styles from "./About.module.scss";
 
 const About = () => {
   return (
-    <section id="about">
+    <section id={styles["about"]}>
       <div className={`container ${styles.container}`}>
         <p>
           Спів - це мистецтво, яке народжується в серці і звучить красою в

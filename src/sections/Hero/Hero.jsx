@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./Hero.module.scss";
-import microphone from "../../../public/images/microphone.png";
+import microphone from "../../../public/images/microphone.webp";
 
 const Hero = () => {
   return (

@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 84px;
-  overflow-x: hidden;
+  overflow: hidden;
 
   @media screen and ($tablet) {
     padding-top: 88px;
@@ -14,14 +14,12 @@
   @media screen and ($desktop) {
     padding-top: 92px;
   }
-  @media screen and (orientation: portrait) {
-    height: 50vh;
-  }
 }
 
 .container {
   // justify-content: space-between;
   height: 100%;
+  // overflow: hidden;
 }
 
 .nameWrapper {
@@ -42,12 +40,7 @@
     animation: title 1s linear forwards;
     animation-delay: 1s;
   }
-  // @media screen and (orientation: portrait) {
-  //   margin-bottom: 3vw;
-  // }
-  // @media screen and (orientation: landscape) {
-  //   margin-bottom: auto;
-  // }
+
   @media screen and ($tablet) {
     margin-bottom: auto;
   }
@@ -62,13 +55,21 @@
 .imgWrapper {
   position: relative;
   flex: 1;
-  height: 100%;
-  transform: translateX(100%);
-  opacity: 0;
 
-  animation: animate 0.5s linear 1.5s forwards;
+  height: clamp(100px, 50vw, 500px);
+
+  // transform: translateX(100%);
+  // opacity: 0;
+
+  // animation: animate 0.5s linear 1.5s forwards;
   & img {
     object-fit: contain;
+  }
+  @media screen and (orientation: landscape) {
+    height: clamp(100px, 100vh, 500px);
+  }
+  @media screen and (orientation: portrait) {
+    height: clamp(100px, 50vh, 500px);
   }
 }
 
